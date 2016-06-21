@@ -1,0 +1,6 @@
+{
+  "name": "InjectJS",
+  "tagline": "A javascript framework for dependency injection",
+  "body": "# injectJS\r\nA javascript framework for dependency injection\r\n\r\n## Quick start\r\n\r\n```javascript\r\ninject('emotion', ':)');\r\n\r\ninject.factory('factory', function (emotion) {\r\n    return 'Hello ' + emotion;\r\n}, ['emotion']);\r\n\r\nconsole.log(inject('factory'));\r\n//output: Hello :)\r\n```\r\n\r\n## API\r\n\r\n`inject` ->  **name**: String, **value**: any, **dependencies**: Array *(optional)*\r\n>  Creates an injector using whatever value.\r\n\r\n`inject.service` -> **name**: String, **value**: Function, **dependencies**: Array *(optional)* \r\n> Creates an injector using class style.\r\n\r\n`inject.factory` -> **name**: String, **value**: Function, **dependencies**: Array *(optional)*     \r\n> Creates an injector using functional style.\r\n\r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
