@@ -1,28 +1,30 @@
-# injectJS
-A javascript framework for dependency injection
+# di.js
+A simple (but useful) javascript framework for dependency injection
 
 ## Quick start
 
 ```javascript
-inject('emotion', ':)');
+di('emotion', ':)');
 
-inject.factory('factory', function (emotion) {
+di.factory('factory', function (emotion) {
     return 'Hello ' + emotion;
 }, ['emotion']);
 
-console.log(inject('factory'));
+console.log(di('factory'));
 //output: Hello :)
 ```
 
 ## API
 
-`inject` ->  **name**: String, **value**: any, **dependencies**: Array *(optional)*
->  Creates an injector using whatever value.
+`di` ->  name: **String**, value: **any**, dependencies: **Array** *(optional)*
+>  Creates a dependency using whatever value.
 
-`inject.service` -> **name**: String, **value**: Function, **dependencies**: Array *(optional)* 
-> Creates an injector using class style.
+`di.service` -> name: **String**, value: **Function**, dependencies: **Array** *(optional)* 
+> Creates a dependency using class style.
 
-`inject.factory` -> **name**: String, **value**: Function, **dependencies**: Array *(optional)*     
-> Creates an injector using functional style.
+`di.factory` -> name: **String**, value: **Function**, dependencies: **Array** *(optional)*     
+> Creates a dependency using functional style.
+
+Enjoy!
 
 

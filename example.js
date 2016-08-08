@@ -1,12 +1,12 @@
-(function (inject) {
+(function (di) {
 
-    inject('emotion', ':)');
+    di('emotion', ':)');
 
-    inject.factory('factory', function () {
+    di.factory('factory', function () {
         return 'Hello';
     });
 
-    inject.service('service', function (factory, emotion) {
+    di.service('service', function (factory, emotion) {
         this.getName = function () {
             return 'John';
         };
@@ -18,12 +18,12 @@
     }, ['factory', 'emotion']);
 
 
-    inject('printService', function (service) {
+    di('printService', function (service) {
         return service.getPhrase();
     }, ['service']);
 
-    var message = inject('printService');
+    var message = di('printService');
 
     console.log(message);
 
-})(window.inject);
+})(window.di);

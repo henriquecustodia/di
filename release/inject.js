@@ -39,7 +39,7 @@
 
     function _set(name, value, dependencies, conf) {
         if (_inject[name]) {
-            scream('Already exists this inject: ' + name);
+            scream('Already exists this di: ' + name);
         }
 
         if (isUndefinedOrNull(value)) {
@@ -64,7 +64,7 @@
         var toInject = _inject[name];
 
         if (!toInject) {
-            scream('The inject "' + name + '" was not found.')
+            scream('The di "' + name + '" was not found.')
         }
 
         var _dependencies = toInject.dependencies ? injector(toInject.dependencies) : [];
@@ -82,7 +82,7 @@
         return toInject.get;
     }
 
-    function inject(name, fn, dependencies, conf) {
+    function di(name, fn, dependencies, conf) {
         if (!arguments.length) {
             return;
         }
@@ -102,8 +102,8 @@
         _set(name, fn, dependencies, { useService: true });
     }
 
-    inject.factory = factory;
-    inject.service = service;
-    w.inject = inject;
+    di.factory = factory;
+    di.service = service;
+    w.di = di;
 
 })(window);
